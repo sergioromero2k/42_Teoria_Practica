@@ -13,4 +13,18 @@ Avanzas el head
 Pones prev del nuevo head a NULL
 El nodo separado queda “suelto”
 */
+#include "header_list.h"
 
+t_stack_node	*detach_first(t_stack_node **stack)
+{
+	t_stack_node	*first;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return (NULL);
+	first = *stack;
+	*stack = first->next;
+	(*stack)->prev = NULL;
+	first->next = NULL;
+	first->prev = NULL;
+	return (first);
+}
