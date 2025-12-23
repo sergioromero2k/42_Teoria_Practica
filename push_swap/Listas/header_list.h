@@ -16,4 +16,11 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
-#endif HEADER_LIST
+int						can_rotate(t_stack_node *stack);
+t_stack_node			*get_last_node(t_stack_node *stack);
+t_stack_node			*detach_first(t_stack_node **stack);
+void					insert_at_end(t_stack_node *stack, t_stack_node *node);
+void					rotate_stack(t_stack_node **stack);
+int						check_integrity(t_stack_node *stack);
+
+#endif
